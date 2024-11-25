@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <script>
+    async function searchPosts() {
+      const query = document.getElementById("search-input").value.toLowerCase();
+      const resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = "";
+
+      const response = await fetch("search.json");
+      const posts = await response.json();
+
+      const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(query) ||
+        post.content.toLowerCase().includes(query)
+      );
+
+      if (filteredPosts.length === 0) {
+        resultsContainer.innerHTML = "<p>No results found.</p>";
+      } else {
+        filteredPosts.forEach(post => {
+          const resultItem = `
+            <div>
+              <h2><a href="${post.url}">${post.title}</a></h2>
+              <p>${post.date}</p>
+            </div>
+          `;
+          resultsContainer.innerHTML += resultItem;
+        });
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Search Posts</h1>
+  </header>
+  <main>
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Type to search..." 
+      oninput="searchPosts()"
+    >
+    <div id="results"></div>
+  </main>
+</body>
+</html>
