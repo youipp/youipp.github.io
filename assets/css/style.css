@@ -1,48 +1,60 @@
+/* 전체 body 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+    line-height: 1.6; /* 텍스트 줄 간격 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    background-color: #f4f4f4; /* 배경 색상 */
+    color: #333; /* 텍스트 색상 */
   }
   
+  /* 헤더 스타일 */
   header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+    background-color: #333; /* 헤더 배경 색상 */
+    color: #fff; /* 헤더 텍스트 색상 */
+    padding: 1rem; /* 안쪽 여백 */
   }
   
   header h1 {
-    margin: 0;
+    margin: 0; /* 기본 여백 제거 */
   }
   
+  /* 내비게이션 스타일 */
   nav ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 리스트 안쪽 여백 제거 */
+    margin: 0; /* 리스트 바깥 여백 제거 */
+    display: flex; /* 가로로 배치 */
   }
   
   nav ul li {
-    display: inline;
-    margin-right: 10px;
+    margin-right: 10px; /* 리스트 아이템 간격 */
   }
   
   nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* 링크 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    transition: color 0.3s ease; /* 색상 변화 애니메이션 */
   }
   
+  nav ul li a:hover {
+    color: #ddd; /* 마우스 오버 시 색상 */
+  }
+  
+  /* 메인 컨텐츠 스타일 */
   main {
-    padding: 1rem;
+    padding: 2rem; /* 넉넉한 안쪽 여백 */
   }
   
+  /* 푸터 스타일 */
   footer {
-    text-align: center;
-    padding: 1rem;
-    background: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 1rem; /* 안쪽 여백 */
+    background-color: #333; /* 배경 색상 */
+    color: #fff; /* 텍스트 색상 */
+    position: fixed; /* 화면 하단 고정 */
+    bottom: 0; /* 하단 위치 */
+    width: 100%; /* 가로 전체 채우기 */
+    font-size: 0.9rem; /* 약간 작은 글씨 */
   }
   
