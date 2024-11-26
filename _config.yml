@@ -4,3 +4,5 @@ plugins:
   - jekyll-feed
 include:
   - index.html
+gems:
+  - jekyll-json
