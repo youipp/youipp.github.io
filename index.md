@@ -16,8 +16,6 @@
       {% for post in site.posts %}
         <li>
           <strong>Title:</strong> <a href="{{ post.url }}">{{ post.title }}</a> <br>
-          <strong>Date:</strong> {{ post.date | date: "%B %d, %Y" }} <br>
-          <strong>Excerpt:</strong> {{ post.excerpt | strip_html }}
         </li>
       {% endfor %}
     </ul>
